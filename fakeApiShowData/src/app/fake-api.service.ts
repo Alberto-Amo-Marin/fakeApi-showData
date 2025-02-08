@@ -14,15 +14,16 @@ export class FakeApiService {
 
   constructor() { }
 
-  // Simula una llamada HTTP GET
+  // Genera 50 entradas de datos simulados
   getData(): Observable<Data[]> {
-    const fakeData: Data[] = [
-      { id: 1, name: 'John Doe', email: 'john.doe@example.com' },
-      { id: 2, name: 'Jane Smith', email: 'jane.smith@example.com' },
-      { id: 3, name: 'Alice Brown', email: 'alice.brown@example.com' },
-      { id: 4, name: 'Bob Johnson', email: 'bob.johnson@example.com' },
-      { id: 5, name: 'Charlie Davis', email: 'charlie.davis@example.com' }
-    ];
-    return of(fakeData); // Retorna un Observable con los datos simulados
+    const fakeData: Data[] = [];
+    for (let i = 1; i <= 50; i++) {
+      fakeData.push({
+        id: i,
+        name: `User ${i}`,
+        email: `user${i}@example.com`
+      });
+    }
+    return of(fakeData);
   }
 }

@@ -1,11 +1,15 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
-import { AppComponent } from './app.component';
-import { MatTableModule } from '@angular/material/table';
-import { MatPaginatorModule } from '@angular/material/paginator';
-import { MatSortModule } from '@angular/material/sort';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatTableModule } from '@angular/material/table';
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
+import { MatSortModule } from '@angular/material/sort';
+
+
+import { AppComponent } from './app.component';
+import { FakeApiService } from './fake-api.service';
 
 @NgModule({
   declarations: [
@@ -13,13 +17,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
   ],
   imports: [
     BrowserModule,
-    HttpClientModule,
+    BrowserAnimationsModule,
+    MatToolbarModule,
     MatTableModule,
-    MatPaginatorModule,
+    MatIconModule,
+    MatButtonModule,
     MatSortModule,
-    BrowserAnimationsModule
+
   ],
-  providers: [],
+  providers: [FakeApiService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

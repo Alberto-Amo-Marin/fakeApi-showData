@@ -13,8 +13,16 @@ export class AppComponent implements OnInit {
   constructor(private fakeApiService: FakeApiService) { }
 
   ngOnInit(): void {
+    this.loadData();
+  }
+
+  loadData(): void {
     this.fakeApiService.getData().subscribe(data => {
       this.dataSource = data;
     });
+  }
+
+  reloadData(): void {
+    this.loadData();
   }
 }
