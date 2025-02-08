@@ -21,13 +21,13 @@ export class FakeApiService {
 
   getData(): Observable<Data[]> {
     const fakeData: Data[] = [];
-    for (let i = 1; i <= 50; i++) {  // Generamos 50 registros
+    for (let i = 1; i <= 50; i++) {  
       fakeData.push({
         id: i,
-        name: chance.name(),  // Genera un nombre realista
-        email: chance.email(),  // Genera un correo electrónico realista
-        //address: `${faker.address.streetAddress()}, ${faker.address.city()}, ${faker.address.state()}`,  // Dirección más completa
-        //phone: faker.phone.phoneNumber(),  // Número de teléfono realista
+        name: chance.name(),  
+        email: chance.email(),  
+        address: chance.address(),  
+        phone: chance.phone(),  
       });
     }
     return of(fakeData);
