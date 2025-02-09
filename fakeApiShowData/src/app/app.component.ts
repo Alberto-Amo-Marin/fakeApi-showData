@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
 import { FakeApiService, Data } from './fake-api.service';
-import { MatPaginator } from '@angular/material/paginator';  // Importa MatPaginator
-import { MatTableDataSource } from '@angular/material/table';  // Usamos MatTableDataSource para integrar la paginación
+import { MatPaginator } from '@angular/material/paginator';
+import { MatTableDataSource } from '@angular/material/table';
 
 @Component({
   selector: 'app-root',
@@ -9,27 +9,33 @@ import { MatTableDataSource } from '@angular/material/table';  // Usamos MatTabl
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit, AfterViewInit {
-  displayedColumns: string[] = ['id', 'name', 'email', 'address', 'phone'];
-  dataSource: MatTableDataSource<Data> = new MatTableDataSource();  // Usamos MatTableDataSource
+  readonly displayedColumns: string[] = ['id', 'name', 'email', 'address', 'phone'];
+  dataSource = new MatTableDataSource<Data>();
 
-  @ViewChild(MatPaginator) paginator!: MatPaginator;  // Agregamos MatPaginator como ViewChild
+  @ViewChild(MatPaginator) paginator?: MatPaginator;
 
-  constructor(private fakeApiService: FakeApiService) { }
+  constructor(private fakeApiService: FakeApiService) {}
 
   ngOnInit(): void {
-    this.fakeApiService.getData().subscribe(data => {
-      this.dataSource.data = data;  // Asignamos los datos a la tabla
-    });
+    this.fetchData();
   }
 
-  // Esto es lo que se asegura de que el paginator esté disponible
-  ngAfterViewInit() {
-    this.dataSource.paginator = this.paginator;  // Asignamos el paginator a la tabla
+  ngAfterViewInit(): void {
+    if (this.paginator) {
+      this.dataSource.paginator = this.paginator;
+    }
   }
 
-  reloadData() {
+  reloadData(): void {
+    this.fetchData();
+  }
+
+  private fetchData(): void {
     this.fakeApiService.getData().subscribe(data => {
-      this.dataSource.data = data;  // Asignamos los datos a la tabla
+      this.dataSource.data = data;
+      if (this.paginator) {
+        this.paginator.firstPage();
+      }
     });
   }
 }

@@ -1,3 +1,5 @@
+$primary-color: #3f51b5;
+
 .app-container {
   display: flex;
   flex-direction: column;
@@ -21,7 +23,7 @@ mat-toolbar {
 
 h2 {
   text-align: center;
-  color: #3f51b5;
+  color: $primary-color;
   font-weight: bold;
   margin-bottom: 20px;
 }
@@ -36,7 +38,6 @@ h2 {
   margin: auto;
   position: relative;
   padding-bottom: 46px;
-
 }
 
 .mat-header-cell {
@@ -45,7 +46,7 @@ h2 {
 }
 
 .mat-sort-header-sorted {
-  color: #3f51b5;
+  color: $primary-color;
 }
 
 .mat-elevation-z8 {
@@ -64,13 +65,13 @@ td {
 }
 
 th {
-  background-color: #3f51b5;
+  background-color: $primary-color;
   color: white;
 }
 
 .reload-button {
   position: absolute;
-  bottom: -28;
+  bottom: -28px;
   right: -12px;
   z-index: 10;
 }
