@@ -23,3 +23,30 @@ Para ejecutar la aplicación en tu máquina local, sigue estos pasos:
 
 ```bash
 git clone https://github.com/Alberto-Amo-Marin/fakeApi-showData.git
+
+
+# fakeApi-showData
+
+This project is an application built with **Angular 14** and **Angular Material** that simulates an API to display randomly generated fake data. The data is presented in an interactive table with pagination support and a reload button.
+
+## Features
+
+- **Dynamic data generation**: Uses the **Chance.js** library to generate realistic random data such as names, addresses, phone numbers, etc.
+- **Table with pagination**: The data is displayed in an **Angular Material** table with support for changing the page size.
+- **Reload button**: A floating button in the bottom right corner allows you to reload the table data.
+- **Clean and modern UI**: Uses **Angular Material** components for a sleek and polished design.
+
+## Technologies
+
+- **Angular 14**: Framework for building web applications.
+- **Angular Material**: UI component library based on Material Design.
+- **Chance.js**: Library for dynamically generating fake data.
+
+## Installation
+
+To run the application on your local machine, follow these steps:
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/Alberto-Amo-Marin/fakeApi-showData.git
