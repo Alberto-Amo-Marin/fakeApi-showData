@@ -48,25 +48,35 @@ To run the application on your local machine, follow these steps:
 git clone https://github.com/Alberto-Amo-Marin/fakeApi-showData.git
 ```
 
-2️⃣ Acceder al directorio del proyecto | Navigate to the project directory
+### 2️⃣ Acceder al directorio del proyecto | Navigate to the project directory
+```bash
 cd fakeApi-showData
+```
 
-3️⃣ Instalar las dependencias | Install dependencies
+###3️⃣ Instalar las dependencias | Install dependencies
+```bash
 npm install
+```
 
-4️⃣ Iniciar la aplicación | Start the application
+###4️⃣ Iniciar la aplicación | Start the application
+```bash
 ng serve
+```
 
 Después de ejecutar este comando, abre tu navegador y accede a:
 After running this command, open your browser and go to:
 
 http://localhost:4200
 
-5️⃣ Generar una build para producción | Build for production
+###5️⃣ Generar una build para producción | Build for production
+```bash
 ng build --configuration=production
+```
 
 Este comando generará los archivos necesarios en la carpeta dist/.
 This command will generate the necessary files in the dist/ folder.
 
-6️⃣ Ejecutar pruebas unitarias | Run unit tests
+###6️⃣ Ejecutar pruebas unitarias | Run unit tests
+```bash
 ng test
+```
