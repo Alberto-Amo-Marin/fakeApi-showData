@@ -1,6 +1,7 @@
 # fakeApi-showData
 
 Este proyecto es una aplicación construida con **Angular 14** y **Angular Material** que simula una API para mostrar datos falsos generados aleatoriamente. Los datos se presentan en una tabla interactiva, con soporte de paginación y un botón de recarga.
+This project is an application built with Angular 14 and Angular Material that simulates an API to display randomly generated fake data. The data is presented in an interactive table, with pagination support and a refresh button.
 
 ---
 
